@@ -67,59 +67,61 @@
 #     print(between_e('estimate'))   # Expected output: eSTIMATe
 
 
-# def rockpaperscissors():
+def rockpaperscissors():
     
-#     while quit != "enter":
+ 
+    while quit != "quit":
+        
+        quit = input("Type 'quit' to end")
+      
+        player1 = ""
 
-#         quit = input("Type 'quit' to end")
-#         player1 = ""
+        player2 = ""
 
-#         player2 = ""
+        while player1 not in ["Rock", "Paper", "Scissors"]:
+            player1 = input()
+            if player1 not in  ["Rock", "Paper", "Scissors"]:
+                print(f"{player1} is invalid. You can only use 'Rock', 'Paper', and 'Scissors'")
 
-#         while player1 not in ["Rock", "Paper", "Scissors"]:
-#             player1 = input()
-#             if player1 not in  ["Rock", "Paper", "Scissors"]:
-#                 print(f"{player1} is invalid. You can only use 'Rock', 'Paper', and 'Scissors'")
-
-#         while player2 not in ["Rock", "Paper", "Scissors"]:
-#             player2 = input()
-#             if player2 not in ["Rock", "Paper", "Scissors"]:
-#                 print(f"{player2} is invalid. You can only use 'Rock', 'Paper', and 'Scissors'")
+        while player2 not in ["Rock", "Paper", "Scissors"]:
+            player2 = input()
+            if player2 not in ["Rock", "Paper", "Scissors"]:
+                print(f"{player2} is invalid. You can only use 'Rock', 'Paper', and 'Scissors'")
 
 
-#         skibidi = 0
+        skibidi = 0
 
-#         while skibidi == 0: 
-#             if player1 == player2:
-#                 print(f"TIE! Both players are tied!")
+        while skibidi == 0: 
+            if player1 == player2:
+                print(f"TIE! Both players are tied!")
 
-#             if player1 == "Rock":
-#                 if player2 == "Paper":
-#                     print(f"Player 2 wins!")
-#                     skibidi += 1
-#                 elif player2 == "Scissors":
-#                     print(f"Player 1 wins!")
-#                     skibidi += 1
+            if player1 == "Rock":
+                if player2 == "Paper":
+                    print(f"Player 2 wins!")
+                    skibidi += 1
+                elif player2 == "Scissors":
+                    print(f"Player 1 wins!")
+                    skibidi += 1
             
-#             if player1 == "Paper":
-#                 if player2 == "Scissors":
-#                     print(f"Player 2 wins!")
-#                     skibidi += 1
-#                 elif player2 == "Rock":
-#                     print(f"Player 1 wins!")
-#                     skibidi += 1
+            if player1 == "Paper":
+                if player2 == "Scissors":
+                    print(f"Player 2 wins!")
+                    skibidi += 1
+                elif player2 == "Rock":
+                    print(f"Player 1 wins!")
+                    skibidi += 1
             
-#             if player1 == "Rock":
-#                 if player2 == "Paper":
-#                     print(f"Player 2 wins!")
-#                     skibidi += 1
-#                 elif player2 == "Scissors":
-#                     print(f"Player 1 wins!")
-#                     skibidi += 1
+            if player1 == "Rock":
+                if player2 == "Paper":
+                    print(f"Player 2 wins!")
+                    skibidi += 1
+                elif player2 == "Scissors":
+                    print(f"Player 1 wins!")
+                    skibidi += 1
 
 
-# if __name__ == '__main__':
-#     print(rockpaperscissors())
+if __name__ == '__main__':
+  rockpaperscissors()
 
 
         

@@ -333,11 +333,122 @@ def spin_words(sentence):
 
     return " ".join(newlist)
 
+
+
+def get_divisors(number):
+    """
+    Returns a list of all divisors for a given number.
+    Reusable function that can be used by other functions.
+    
+    Args:
+        number (int): The number to find divisors for
+    
+    Returns:
+        list: List of all divisors of the number
+    """
+    divisors = []
+    for i in range(1, number + 1):
+        if number % i == 0:
+            divisors.append(i)
+    return divisors
+
+# def get_prime(number):
+    
+#     if number < 2:
+#         return False
+    
+#     return True
+
+
+# def get_integer():
+#     return int(input("Give me a number: "))
+
+# def check_prime():
+
+#     number = get_integer()
+
+
+#     if get_prime(number):
+#         print(f"{number} is prime")
+#     else:
+#         print(f"{number} is not prime")
+#         print(f" here is the list of the divisors for {number}: {get_divisors(number)}")
+
+    
+
+
+def get_prime(number):
+    """
+    Checks if a number is prime.
+    
+    Args:
+        number (int): The number to check for primality
+    
+    Returns:
+        bool: True if the number is prime, False otherwise
+    """
+    if number < 2:
+        return False
+    
+    # Check if number has any divisors other than 1 and itself
+    for i in range(2, int(number ** 0.5) + 1):
+        if number % i == 0:
+            return False
+    return True
+
+def get_integer():
+    """
+    Gets an integer input from the user.
+    
+    Returns:
+        int: The integer entered by the user
+    """
+    return int(input("Give me a number: "))
+
 def check_prime():
+    """
+    Main function that checks if a user-provided number is prime
+    and displays the result along with divisors if not prime.
+    """
+    number = get_integer()
+    
+    if get_prime(number):
+        print(f"{number} is prime")
+    else:
+        print(f"{number} is not prime")
+        print(f"Here is the list of the divisors for {number}: {get_divisors(number)}")
 
 
 
-        
+
+def list_functions(generic):
+
+    newlist = []
+
+    if isinstance(generic, list):
+
+        newlist.append(generic[0])
+
+        newlist.append(generic[-1])
+
+
+
+    else:
+        print(f"You need to input a list!")
+
+    return newlist
+
+def list_functions(generic):
+    if isinstance(generic, list) and len(generic) > 0:
+        return [generic[i] for i in [0, -1]]
+    elif isinstance(generic, list):
+        print("List is empty!")
+        return []
+    else:
+        print("You need to input a list!")
+        return []
+
+
 
 # def narcissistic_numbers(value):
     
@@ -354,14 +465,15 @@ def check_prime():
 #     return False
 
 
-
+ex = [1,2,3,4,5,6,7]
 
 
 
 if __name__ == '__main__':
-   print(spin_words("example sentence"))
-   print(spin_words(12345))
-   print(spin_words("I like to eat chicken and rice"))
-   print(spin_words("1 2 princes here before you"))
+#    print(spin_words("example sentence"))
+#    print(spin_words(12345))
+#    print(spin_words("I like to eat chicken and rice"))
+#    print(spin_words("1 2 princes here before you"))
+    print(list_functions(ex))
 
 
